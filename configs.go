@@ -1831,6 +1831,14 @@ func prepareInputMediaFile(inputMedia interface{}, idx int) []RequestFile {
 				File: f,
 			})
 		}
+	case InputMediaDocument:
+		switch f := m.Media.(type) {
+		case string, FileBytes, FileReader:
+			files = append(files, RequestFile{
+				Name: fmt.Sprintf("file-%d", idx),
+				File: f,
+			})
+		}
 	case InputMediaVideo:
 		switch f := m.Media.(type) {
 		case string, FileBytes, FileReader:

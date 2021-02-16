@@ -1,3 +1,3 @@
-module github.com/go-telegram-bot-api/telegram-bot-api/v5
+module github.com/joeyave/telegram-bot-api/v5
 
-go 1.13
+go 1.15
